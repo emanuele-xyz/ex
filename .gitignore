@@ -1,0 +1,7 @@
+# .gitignore
+
+# Ignore proj.sublime-workspace
+proj.sublime-workspace
+
+# Ignore build output
+build/**

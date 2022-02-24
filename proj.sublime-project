@@ -1,0 +1,41 @@
+// Visit https://www.sublimetext.com/docs/projects.html for details
+{
+    "folders":
+    [
+        {
+            "path": ".",
+
+            "file_include_patterns": [],
+            "file_exclude_patterns": [],
+
+            "folder_include_patterns": [],
+            "folder_exclude_patterns": ["build"],
+
+            "binary_file_patterns": [],
+
+            "index_include_patterns": [],
+            "index_exclude_patterns": [],
+
+            "follow_symlinks": false,
+        }
+    ],
+
+    "settings":
+    {
+        "translate_tabs_to_spaces": true,
+        "trim_trailing_white_space_on_save": "all",
+        "ensure_newline_at_eof_on_save": true,
+    },
+
+    // Visit https://www.sublimetext.com/docs/build_systems.html for details
+    "build_systems":
+    [
+        {
+            "name": "BuildProject",
+            "working_dir": "$folder",
+            "file_regex": "^(.*)\\((\\d+),?(\\d+)?\\)\\s?:\\s([^\n]+)",
+            "word_wrap": true,
+            "cmd": ["proj-build.bat", "debug"],
+        }
+    ],
+}
