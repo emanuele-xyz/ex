@@ -12,22 +12,20 @@ goto :exit
 
 :continue
 
+set GLAD= ..\vendor\glad
+
 rem ///////////////////////////////////////////////////////////////////////////
 rem source directories
 rem ///////////////////////////////////////////////////////////////////////////
 
-set SRC= ..\src
+set SRC= %GLAD%\src
 
 rem ///////////////////////////////////////////////////////////////////////////
 rem source files
 rem ///////////////////////////////////////////////////////////////////////////
 
-rem ---------------------------------------------------------------------------
-rem project source files
-rem ---------------------------------------------------------------------------
-
 set SOURCES=
-set SOURCES= %SOURCES% %SRC%\main.c
+set SOURCES= %SOURCES% %SRC%\glad.c
 
 rem ///////////////////////////////////////////////////////////////////////////
 rem compiler flags
@@ -39,15 +37,14 @@ rem ---------------------------------------------------------------------------
 rem include directories (/I dir)
 rem ---------------------------------------------------------------------------
 
-set FLAGS= %FLAGS% /I ..\include
-set FLAGS= %FLAGS% /I ..\vendor\glfw\include
-set FLAGS= %FLAGS% /I ..\vendor\glad\include
+set FLAGS= %FLAGS% /I %GLAD%\include
 
 rem ---------------------------------------------------------------------------
 rem defines preprocessor symbol (/Dsymbol)
 rem ---------------------------------------------------------------------------
 
 rem set FLAGS= %FLAGS% /D_CRT_SECURE_NO_WARNINGS
+rem set FLAGS= %FLAGS% /D_GLFW_WIN32
 
 rem ---------------------------------------------------------------------------
 rem misc
@@ -59,18 +56,14 @@ rem displays the full path of source code files passed
 set FLAGS= %FLAGS% /FC
 rem builds multiple source files concurrently
 set FLAGS= %FLAGS% /MP
+rem compiles without linking
+set FLAGS= %FLAGS% /c
 
 rem ---------------------------------------------------------------------------
 rem .pdb file name
 rem ---------------------------------------------------------------------------
 
-set FLAGS= %FLAGS% /Fdex.pdb
-
-rem ---------------------------------------------------------------------------
-rem .exe file name
-rem ---------------------------------------------------------------------------
-
-set FLAGS= %FLAGS% /Fe:ex.exe
+set FLAGS= %FLAGS% /Fd:glad.pdb
 
 rem ---------------------------------------------------------------------------
 rem debug build compiler flags
@@ -102,57 +95,57 @@ rem enable all warnings
 set FLAGS= %FLAGS% /Wall
 rem treat warnings as erros
 set FLAGS= %FLAGS% /WX
-rem ignore spectre mitigation insertion warning
+rem ignore 'symbol' is not defined as a preprocessor macro
+set FLAGS= %FLAGS% /wd4668
+rem ignore spectre mitigation
 set FLAGS= %FLAGS% /wd5045
-rem ignore function not inlined warning
-set FLAGS= %FLAGS% /wd4710
-rem ignore relative include path warning
-set FLAGS= %FLAGS% /wd4464
-rem ignore bytes padding added warning
-set FLAGS= %FLAGS% /wd4820
 
 rem ///////////////////////////////////////////////////////////////////////////
-rem linker flags
+rem Compile
 rem ///////////////////////////////////////////////////////////////////////////
-
-set LINKER= /link
-set LINKER= %LINKER% /release
-
-set LINKER= %LINKER% user32.lib
-set LINKER= %LINKER% gdi32.lib
-set LINKER= %LINKER% shell32.lib
-
-rem ---------------------------------------------------------------------------
-rem link glfw
-rem ---------------------------------------------------------------------------
-
-if "%1" == "debug"   (set LINKER= %LINKER% .\glfw.dbg.lib)
-if "%1" == "release" (set LINKER= %LINKER% .\glfw.rls.lib)
-
-rem ---------------------------------------------------------------------------
-rem link glad
-rem ---------------------------------------------------------------------------
-
-if "%1" == "debug"   (set LINKER= %LINKER% .\glad.dbg.lib)
-if "%1" == "release" (set LINKER= %LINKER% .\glad.rls.lib)
-
-rem ///////////////////////////////////////////////////////////////////////////
-rem compile
-rem ///////////////////////////////////////////////////////////////////////////
-
-rem compile glfw
-setlocal
-call glfw-build.bat %1
-endlocal
-
-rem compile glad
-setlocal
-call glad-build.bat %1
-endlocal
 
 if not exist .\build mkdir .\build
 pushd .\build
-cl %FLAGS% %SOURCES% %LINKER%
+cl %FLAGS% %SOURCES%
+popd
+
+rem ///////////////////////////////////////////////////////////////////////////
+rem Lib
+rem ///////////////////////////////////////////////////////////////////////////
+
+rem reset flags
+set FLAGS=
+
+rem ///////////////////////////////////////////////////////////////////////////
+rem Object Files
+rem ///////////////////////////////////////////////////////////////////////////
+
+set OBJS=
+set OBJS= %OBJS% glad.obj
+
+rem ---------------------------------------------------------------------------
+rem misc
+rem ---------------------------------------------------------------------------
+
+rem suppresses display of the copyright message
+set FLAGS= %FLAGS% /NOLOGO
+rem display infos
+set FLAGS= %FLAGS% /VERBOSE
+
+rem ---------------------------------------------------------------------------
+rem .lib file name
+rem ---------------------------------------------------------------------------
+
+if "%1" == "debug"   (set FLAGS= %FLAGS% /OUT:glad.dbg.lib)
+if "%1" == "release" (set FLAGS= %FLAGS% /OUT:glad.rls.lib)
+
+rem ///////////////////////////////////////////////////////////////////////////
+rem Build static library
+rem ///////////////////////////////////////////////////////////////////////////
+
+if not exist .\build mkdir .\build
+pushd .\build
+lib %OBJS% %FLAGS%
 popd
 
 rem ///////////////////////////////////////////////////////////////////////////

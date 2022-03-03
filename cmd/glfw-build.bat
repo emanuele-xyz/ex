@@ -151,6 +151,27 @@ rem ///////////////////////////////////////////////////////////////////////////
 rem reset flags
 set FLAGS=
 
+rem ///////////////////////////////////////////////////////////////////////////
+rem Object files
+rem ///////////////////////////////////////////////////////////////////////////
+
+set OBJS=
+set OBJS= %OBJS% context.obj
+set OBJS= %OBJS% init.obj
+set OBJS= %OBJS% input.obj
+set OBJS= %OBJS% monitor.obj
+set OBJS= %OBJS% wgl_context.obj
+set OBJS= %OBJS% egl_context.obj
+set OBJS= %OBJS% osmesa_context.obj
+set OBJS= %OBJS% win32_init.obj
+set OBJS= %OBJS% win32_joystick.obj
+set OBJS= %OBJS% win32_monitor.obj
+set OBJS= %OBJS% win32_thread.obj
+set OBJS= %OBJS% win32_time.obj
+set OBJS= %OBJS% win32_window.obj
+set OBJS= %OBJS% window.obj
+set OBJS= %OBJS% vulkan.obj
+
 rem ---------------------------------------------------------------------------
 rem misc
 rem ---------------------------------------------------------------------------
@@ -173,7 +194,7 @@ rem ///////////////////////////////////////////////////////////////////////////
 
 if not exist .\build mkdir .\build
 pushd .\build
-lib *.obj %FLAGS%
+lib %OBJS% %FLAGS%
 popd
 
 rem ///////////////////////////////////////////////////////////////////////////

@@ -31,7 +31,9 @@ typedef double f64;
 // Macros
 // ----------------------------------------------------------------------------
 
-#define proj_crash() do { *(int*)(0) = 0; } while (false)
-#define proj_assert(p) do { if (!(p)) { proj_crash(); }  } while (false)
+#define ExUnused(x) (void)(x)
+
+#define ExCrash() do { *(int*)(0) = 0; } while (false)
+#define ExAssert(p) do { if (!(p)) { ExCrash(); }  } while (false)
 
 // ----------------------------------------------------------------------------

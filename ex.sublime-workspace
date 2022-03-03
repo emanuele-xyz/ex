@@ -57,6 +57,7 @@
 	},
 	"file_history":
 	[
+		"/C/Dev/ex/cmd/ex-run.bat",
 		"/C/Dev/ex/cmd/glfw-build.bat",
 		"/C/Dev/ex/vendor/glfw/CONTRIBUTORS.md",
 		"/C/Dev/ex/src/main.c",
@@ -176,6 +177,14 @@
 		"selected_items":
 		[
 			[
+				"ex-run",
+				"cmd\\ex-run.bat"
+			],
+			[
+				"main",
+				"src\\main.c"
+			],
+			[
 				"glfw",
 				"cmd\\glfw-build.bat"
 			],
@@ -202,10 +211,6 @@
 			[
 				"proj-",
 				"cmd\\proj-build.bat"
-			],
-			[
-				"main",
-				"src\\main.c"
 			],
 			[
 				"main.c",
