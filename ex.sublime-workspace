@@ -1,0 +1,275 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"inc",
+				"inc"
+			]
+		]
+	},
+	"build_system": "BuildProject",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Keyb",
+				"Preferences: Key Bindings"
+			],
+			[
+				"Theme",
+				"UI: Select Theme"
+			],
+			[
+				"Install Pac",
+				"Package Control: Install Package"
+			],
+			[
+				"Packa",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Dev/ex/cmd/glfw-build.bat",
+		"/C/Dev/ex/vendor/glfw/CONTRIBUTORS.md",
+		"/C/Dev/ex/src/main.c",
+		"/C/Dev/ex/cmd/proj-build.bat",
+		"/C/Dev/ex/vendor/glfw/cmd/proj-build.bat",
+		"/C/Dev/handmade-hero/code/build.bat",
+		"/C/Dev/ex/vendor/glfw/src/internal.h",
+		"/C/Dev/ex/vendor/glfw/src/input.c",
+		"/C/Dev/ex/vendor/glfw/src/win32_window.c",
+		"/C/Dev/ex/README.md",
+		"/C/Dev/Test/src/main.c",
+		"/C/Dev/Test/include/proj/core.h",
+		"/C/Dev/Test/README.md",
+		"/C/Dev/Test/.sublime-project",
+		"/C/Dev/Test/commands/proj-setup.bat",
+		"/C/Dev/Test/src/func.c",
+		"/C/Dev/Test/src/f.c",
+		"/C/Dev/Test/include/proj/func.h",
+		"/C/Dev/Test/commands/proj-build.bat",
+		"/C/Program Files/Sublime Text/Packages/C#.sublime-package",
+		"/C/Users/emanuele/AppData/Roaming/Sublime Text/Packages/User/batbuild.sublime-build",
+		"/C/Dev/Test/scripts/proj-setup.bat"
+	],
+	"find":
+	{
+		"height": 44.0
+	},
+	"find_in_files":
+	{
+		"height": 116.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"misc",
+			".pdb",
+			"ex",
+			"proj",
+			"exit",
+			"GLFW",
+			"LINKER",
+			"INC",
+			"RELEASE",
+			"release",
+			"link",
+			"release",
+			"/link",
+			"/Release",
+			"/LINK",
+			"/RELEASE",
+			"/release",
+			"/Mp",
+			"/MP",
+			"glfwPlatformTerminate",
+			"glfwFunctionTerminate",
+			"glfw",
+			"defines",
+			"int",
+			"return",
+			"func",
+			"puts",
+			"}\n",
+			"int",
+			"    ",
+			"func"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"kek",
+			"i8"
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"incremental_find":
+	{
+		"height": 31.2
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 150.399993896
+	},
+	"output.find_results":
+	{
+		"height": 126.400001526
+	},
+	"pinned_build_system": "BuildProject",
+	"replace":
+	{
+		"height": 59.2
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"glfw",
+				"cmd\\glfw-build.bat"
+			],
+			[
+				"cmd\\",
+				"cmd\\ex-build.bat"
+			],
+			[
+				"cmd",
+				"vendor\\glfw\\CONTRIBUTORS.md"
+			],
+			[
+				"ex.s",
+				"ex.sublime-project"
+			],
+			[
+				"proj-build",
+				"vendor\\glfw\\cmd\\proj-build.bat"
+			],
+			[
+				"glfw-",
+				"cmd\\glfw-build.bat"
+			],
+			[
+				"proj-",
+				"cmd\\proj-build.bat"
+			],
+			[
+				"main",
+				"src\\main.c"
+			],
+			[
+				"main.c",
+				"src\\main.c"
+			],
+			[
+				"mainc.",
+				"src\\main.c"
+			],
+			[
+				"",
+				"vendor\\glfw\\cmd\\proj-build.bat"
+			],
+			[
+				"TODO",
+				"TODO.md"
+			],
+			[
+				"sources",
+				"cmd\\proj-sources.bat"
+			],
+			[
+				"project",
+				"proj.sublime-project"
+			],
+			[
+				"se",
+				"commands\\proj-setup.bat"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 323.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"u32"
+			]
+		],
+		"width": 592.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 210.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

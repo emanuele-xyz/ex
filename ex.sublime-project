@@ -35,7 +35,7 @@
             "working_dir": "$folder",
             "file_regex": "^(.*)\\((\\d+),?(\\d+)?\\)\\s?:\\s([^\n]+)",
             "word_wrap": true,
-            "cmd": ["proj-build.bat", "debug"],
+            "cmd": ["ex-build.bat", "debug"],
         }
     ],
 }
