@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"Framebuffer",
+				"FramebufferSizeCallback"
+			],
+			[
 				"inc",
 				"inc"
 			]
@@ -57,8 +61,28 @@
 	},
 	"file_history":
 	[
-		"/C/Dev/ex/cmd/ex-run.bat",
+		"/C/Dev/ex/ex.sublime-project",
+		"/C/Dev/ex/vendor/glad/include/glad/glad.h",
+		"/C/Dev/ex/cmd/glad-build.bat",
 		"/C/Dev/ex/cmd/glfw-build.bat",
+		"/C/Dev/ex/vendor/cglm/include/cglm/vec3.h",
+		"/C/Dev/ex/vendor/cglm/include/cglm/cglm.h",
+		"/C/Dev/ex/vendor/cglm/src/vec3.c",
+		"/C/Dev/ex/vendor/cglm/include/cglm/common.h",
+		"/C/Dev/ex/vendor/cglm/include/cglm/call/vec3.h",
+		"/C/Dev/ex/kek.txt",
+		"/C/Dev/ex/cmd/cglm-build.bat",
+		"/C/Dev/ex/vendor/cglm/include/cglm/types.h",
+		"/C/Dev/ex/vendor/cglm/include/cglm/call.h",
+		"/C/Dev/ex/vendor/cglm/include/cglm/clipspace/ortho_rh_no.h",
+		"/C/Dev/ex/vendor/cglm/src/config.h",
+		"/C/Dev/ex/vendor/cglm/src/affine.c",
+		"/C/Dev/ex/vendor/cglm/src/clipspace/ortho_lh_no.c",
+		"/C/Dev/ex/.gitignore",
+		"/C/Users/emanuele/Downloads/cglm-0.8.4/cglm-0.8.4/.gitignore",
+		"/C/Users/emanuele/Downloads/cglm-0.8.4/cglm-0.8.4/VERSION.md",
+		"/C/Dev/ex/include/ex/Core.h",
+		"/C/Dev/ex/cmd/ex-run.bat",
 		"/C/Dev/ex/vendor/glfw/CONTRIBUTORS.md",
 		"/C/Dev/ex/src/main.c",
 		"/C/Dev/ex/cmd/proj-build.bat",
@@ -98,6 +122,40 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ruler",
+			"glGetIntegerv",
+			":",
+			"@",
+			":",
+			"/D",
+			"vec3_add",
+			"glmc_",
+			"/D",
+			"define CGLM_INLINE",
+			"CGLM_INLINE",
+			"CGLM_EXPORT",
+			"CGLM_INLINE",
+			"glm_vec3_add",
+			"CGLM_EXPORT",
+			"glmc_vec3_add",
+			"__imp_glmc_vec3_add",
+			"GLM_VEC3_ONE_INIT",
+			"mat3",
+			"typedef vec3",
+			"typedef *+ vec3",
+			"vec3",
+			"include",
+			"config.obj",
+			"config.h",
+			"wd",
+			"/wd",
+			"wd",
+			"//wd",
+			"/dw",
+			"/wd",
+			"CGLM_EXPORT",
+			"include",
+			"GLFW",
 			"misc",
 			".pdb",
 			"ex",
@@ -144,7 +202,7 @@
 		"show_context": true,
 		"use_buffer2": true,
 		"use_gitignore": true,
-		"whole_word": true,
+		"whole_word": false,
 		"wrap": true
 	},
 	"incremental_find":
@@ -158,7 +216,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 150.399993896
+		"height": 438.0
 	},
 	"output.find_results":
 	{
@@ -177,16 +235,92 @@
 		"selected_items":
 		[
 			[
-				"ex-run",
-				"cmd\\ex-run.bat"
+				"pro",
+				"ex.sublime-project"
+			],
+			[
+				"Core",
+				"include\\Ex\\Core.h"
+			],
+			[
+				"build.bat",
+				"cmd\\glfw-build.bat"
+			],
+			[
+				"ex-bui",
+				"cmd\\ex-build.bat"
 			],
 			[
 				"main",
 				"src\\main.c"
 			],
 			[
+				"",
+				"cmd\\ex-build.bat"
+			],
+			[
+				"ex-build",
+				"cmd\\ex-build.bat"
+			],
+			[
+				"kek",
+				"kek.txt"
+			],
+			[
+				"vec3.h",
+				"vendor\\cglm\\include\\cglm\\vec3.h"
+			],
+			[
+				"glm.h",
+				"vendor\\cglm\\include\\cglm\\cglm.h"
+			],
+			[
+				"cglm-bui",
+				"cmd\\cglm-build.bat"
+			],
+			[
+				"vec3",
+				"vendor\\cglm\\src\\vec3.c"
+			],
+			[
+				"cglm-b",
+				"cmd\\cglm-build.bat"
+			],
+			[
+				"cglm\\call",
+				"vendor\\cglm\\include\\cglm\\call.h"
+			],
+			[
+				"cglm",
+				"cmd\\cglm-build.bat"
+			],
+			[
+				"config.h",
+				"vendor\\cglm\\src\\config.h"
+			],
+			[
+				"ortho",
+				"vendor\\cglm\\src\\clipspace\\ortho_lh_no.c"
+			],
+			[
+				"core",
+				"include\\ex\\Core.h"
+			],
+			[
+				"ma",
+				"src\\main.c"
+			],
+			[
 				"glfw",
 				"cmd\\glfw-build.bat"
+			],
+			[
+				"glad-build",
+				"cmd\\glad-build.bat"
+			],
+			[
+				"ex-run",
+				"cmd\\ex-run.bat"
 			],
 			[
 				"cmd\\",
@@ -219,10 +353,6 @@
 			[
 				"mainc.",
 				"src\\main.c"
-			],
-			[
-				"",
-				"vendor\\glfw\\cmd\\proj-build.bat"
 			],
 			[
 				"TODO",

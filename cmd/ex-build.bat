@@ -42,12 +42,19 @@ rem ---------------------------------------------------------------------------
 set FLAGS= %FLAGS% /I ..\include
 set FLAGS= %FLAGS% /I ..\vendor\glfw\include
 set FLAGS= %FLAGS% /I ..\vendor\glad\include
+set FLAGS= %FLAGS% /I ..\vendor\cglm\include
 
 rem ---------------------------------------------------------------------------
 rem defines preprocessor symbol (/Dsymbol)
 rem ---------------------------------------------------------------------------
 
-rem set FLAGS= %FLAGS% /D_CRT_SECURE_NO_WARNINGS
+rem define either EX_DEBUG or EX_RELEASE
+if "%1" == "debug"   (set FLAGS= %FLAGS% /DEX_DEBUG)
+if "%1" == "release" (set FLAGS= %FLAGS% /DEX_RELEASE)
+
+rem TODO: do i need them aligned or not?
+rem disable cglm alignment requirement
+rem set FLAGS= %FLAGS% /DCGLM_ALL_UNALIGNED
 
 rem ---------------------------------------------------------------------------
 rem misc
@@ -70,7 +77,7 @@ rem ---------------------------------------------------------------------------
 rem .exe file name
 rem ---------------------------------------------------------------------------
 
-set FLAGS= %FLAGS% /Fe:ex.exe
+set FLAGS= %FLAGS% /Feex.exe
 
 rem ---------------------------------------------------------------------------
 rem debug build compiler flags
@@ -110,6 +117,8 @@ rem ignore relative include path warning
 set FLAGS= %FLAGS% /wd4464
 rem ignore bytes padding added warning
 set FLAGS= %FLAGS% /wd4820
+rem ignore structure was padded due to __declspec(align())
+set FLAGS= %FLAGS% /wd4324
 
 rem ///////////////////////////////////////////////////////////////////////////
 rem linker flags

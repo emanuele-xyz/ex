@@ -21,6 +21,11 @@ typedef char c8;
 typedef float  f32;
 typedef double f64;
 
+typedef u32 b32;
+
+#define true  1
+#define false 0
+
 // ----------------------------------------------------------------------------
 // Standard Library
 // ----------------------------------------------------------------------------
@@ -34,6 +39,11 @@ typedef double f64;
 #define ExUnused(x) (void)(x)
 
 #define ExCrash() do { *(int*)(0) = 0; } while (false)
+#define ExCrashMsg(msg) do { *(int*)(0) = 0; } while (false)
+
 #define ExAssert(p) do { if (!(p)) { ExCrash(); }  } while (false)
+#define ExAssertMsg(p, msg) do { if (!(p)) { ExCrash(); }  } while (false)
+
+#define ExUnreachableCodePath() ExCrashMsg("Unreachable code path")
 
 // ----------------------------------------------------------------------------
