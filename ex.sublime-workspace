@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"M",
+				"defaultMaterial"
+			],
+			[
+				"ExA",
+				"ExAssert"
+			],
+			[
 				"defa",
 				"defaultMaterial"
 			],
@@ -105,9 +113,12 @@
 	},
 	"file_history":
 	[
+		"/C/Users/emanuele/Downloads/cube.gltf",
+		"/C/Dev/ex/data/shaders/shader.frag",
+		"/C/Dev/ex/data/shaders/shader.vert",
+		"/C/Dev/ex/TODO.md",
 		"/C/Dev/ex/cmd/ex-build.bat",
 		"/C/Dev/ex/include/Ex/Core.h",
-		"/C/Dev/ex/data/shaders/shader.frag",
 		"/C/Dev/handmade-hero/code/build.txt",
 		"/C/Dev/ex/cmd/glfw-build.bat",
 		"/C/Dev/ex/cmd/glad-build.bat",
@@ -156,7 +167,7 @@
 	],
 	"find":
 	{
-		"height": 43.2
+		"height": 44.0
 	},
 	"find_in_files":
 	{
@@ -171,6 +182,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"MaterialSet",
 			"CreateShaderProgram",
 			"_CRT_SECURE_NO_WARNINGS",
 			"{0}",
@@ -300,6 +312,30 @@
 				"TODO.md"
 			],
 			[
+				"shader.fra",
+				"data\\shaders\\shader.frag"
+			],
+			[
+				"flat.fra",
+				"data\\shaders\\flat.frag"
+			],
+			[
+				"shader.vert",
+				"data\\shaders\\shader.vert"
+			],
+			[
+				"shader",
+				"data\\shaders\\shader.frag"
+			],
+			[
+				"flat.vert",
+				"data\\shaders\\flat.vert"
+			],
+			[
+				"main.c",
+				"src\\main.cpp"
+			],
+			[
 				"ex-build.",
 				"cmd\\ex-build.bat"
 			],
@@ -310,10 +346,6 @@
 			[
 				"COre",
 				"include\\Ex\\Core.h"
-			],
-			[
-				"shader",
-				"data\\shaders\\shader.frag"
 			],
 			[
 				"shader.",
@@ -442,10 +474,6 @@
 			[
 				"proj-",
 				"cmd\\proj-build.bat"
-			],
-			[
-				"main.c",
-				"src\\main.c"
 			],
 			[
 				"mainc.",
