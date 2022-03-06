@@ -27,7 +27,7 @@ rem project source files
 rem ---------------------------------------------------------------------------
 
 set SOURCES=
-set SOURCES= %SOURCES% %SRC%\main.c
+set SOURCES= %SOURCES% %SRC%\main.cpp
 
 rem ///////////////////////////////////////////////////////////////////////////
 rem compiler flags
@@ -52,6 +52,9 @@ rem define either EX_DEBUG or EX_RELEASE
 if "%1" == "debug"   (set FLAGS= %FLAGS% /DEX_DEBUG)
 if "%1" == "release" (set FLAGS= %FLAGS% /DEX_RELEASE)
 
+rem disbale standard library deprecation
+set FLAGS= %FLAGS% /D_CRT_SECURE_NO_WARNINGS
+
 rem TODO: do i need them aligned or not?
 rem disable cglm alignment requirement
 rem set FLAGS= %FLAGS% /DCGLM_ALL_UNALIGNED
@@ -66,6 +69,15 @@ rem displays the full path of source code files passed
 set FLAGS= %FLAGS% /FC
 rem builds multiple source files concurrently
 set FLAGS= %FLAGS% /MP
+
+rem ---------------------------------------------------------------------------
+rem disable some c++ RTTI and exceptions
+rem ---------------------------------------------------------------------------
+
+rem disable RTTI
+set FLAGS= %FLAGS% /GR-
+rem disbales C++ exceptions
+set FLAGS= %FLAGS% /EHa-
 
 rem ---------------------------------------------------------------------------
 rem .pdb file name

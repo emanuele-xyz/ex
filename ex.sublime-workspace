@@ -4,6 +4,50 @@
 		"selected_items":
 		[
 			[
+				"defa",
+				"defaultMaterial"
+			],
+			[
+				"quadMes",
+				"quadMesh"
+			],
+			[
+				"MeshDa",
+				"MeshDataInitQuad"
+			],
+			[
+				"sizeof",
+				"sizeofIndices"
+			],
+			[
+				"sizeo",
+				"sizeofVertices"
+			],
+			[
+				"in",
+				"indices"
+			],
+			[
+				"vert",
+				"vertices"
+			],
+			[
+				"Creat",
+				"CreateShaderProgram"
+			],
+			[
+				"SHADE",
+				"SHADER_TYPE_VERT"
+			],
+			[
+				"Create",
+				"CreateShader"
+			],
+			[
+				"SHADER",
+				"SHADER_TYPE_VERT"
+			],
+			[
 				"Framebuffer",
 				"FramebufferSizeCallback"
 			],
@@ -61,10 +105,15 @@
 	},
 	"file_history":
 	[
-		"/C/Dev/ex/ex.sublime-project",
-		"/C/Dev/ex/vendor/glad/include/glad/glad.h",
-		"/C/Dev/ex/cmd/glad-build.bat",
+		"/C/Dev/ex/cmd/ex-build.bat",
+		"/C/Dev/ex/include/Ex/Core.h",
+		"/C/Dev/ex/data/shaders/shader.frag",
+		"/C/Dev/handmade-hero/code/build.txt",
 		"/C/Dev/ex/cmd/glfw-build.bat",
+		"/C/Dev/ex/cmd/glad-build.bat",
+		"/C/Dev/ex/vendor/glad/include/glad/glad.h",
+		"/C/Users/emanuele/AppData/Local/Temp/glad.h",
+		"/C/Dev/ex/ex.sublime-project",
 		"/C/Dev/ex/vendor/cglm/include/cglm/vec3.h",
 		"/C/Dev/ex/vendor/cglm/include/cglm/cglm.h",
 		"/C/Dev/ex/vendor/cglm/src/vec3.c",
@@ -107,7 +156,7 @@
 	],
 	"find":
 	{
-		"height": 44.0
+		"height": 43.2
 	},
 	"find_in_files":
 	{
@@ -122,6 +171,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"CreateShaderProgram",
+			"_CRT_SECURE_NO_WARNINGS",
+			"{0}",
+			"{}",
+			"(void)",
+			"GLSetupDebugCallback",
+			"gladLoadGLLoader",
+			"GL_DEBUG_OUTPUT",
+			"GL_CONTEXT_FLAG_DEBUG_BIT",
+			"/D",
 			"ruler",
 			"glGetIntegerv",
 			":",
@@ -194,6 +253,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"CreateProgram",
+			"()",
 			"kek",
 			"i8"
 		],
@@ -225,7 +286,7 @@
 	"pinned_build_system": "BuildProject",
 	"replace":
 	{
-		"height": 59.2
+		"height": 80.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -235,19 +296,51 @@
 		"selected_items":
 		[
 			[
-				"pro",
-				"ex.sublime-project"
+				"TODO",
+				"TODO.md"
+			],
+			[
+				"ex-build.",
+				"cmd\\ex-build.bat"
 			],
 			[
 				"Core",
 				"include\\Ex\\Core.h"
 			],
 			[
+				"COre",
+				"include\\Ex\\Core.h"
+			],
+			[
+				"shader",
+				"data\\shaders\\shader.frag"
+			],
+			[
+				"shader.",
+				"data\\shaders\\shader.frag"
+			],
+			[
 				"build.bat",
 				"cmd\\glfw-build.bat"
 			],
 			[
-				"ex-bui",
+				".bat",
+				"cmd\\ex-build.bat"
+			],
+			[
+				"build",
+				"cmd\\ex-build.bat"
+			],
+			[
+				"mai",
+				"src\\main.c"
+			],
+			[
+				"glad.",
+				"vendor\\glad\\include\\glad\\glad.h"
+			],
+			[
+				"ex-build",
 				"cmd\\ex-build.bat"
 			],
 			[
@@ -255,11 +348,15 @@
 				"src\\main.c"
 			],
 			[
-				"",
+				"pro",
+				"ex.sublime-project"
+			],
+			[
+				"ex-bui",
 				"cmd\\ex-build.bat"
 			],
 			[
-				"ex-build",
+				"",
 				"cmd\\ex-build.bat"
 			],
 			[
@@ -353,10 +450,6 @@
 			[
 				"mainc.",
 				"src\\main.c"
-			],
-			[
-				"TODO",
-				"TODO.md"
 			],
 			[
 				"sources",

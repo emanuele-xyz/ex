@@ -74,6 +74,15 @@ rem compiles without linking
 set FLAGS= %FLAGS% /c
 
 rem ---------------------------------------------------------------------------
+rem disable some c++ RTTI and exceptions
+rem ---------------------------------------------------------------------------
+
+rem disable RTTI
+set FLAGS= %FLAGS% /GR-
+rem disbales C++ exceptions
+set FLAGS= %FLAGS% /EHa-
+
+rem ---------------------------------------------------------------------------
 rem .pdb file name
 rem ---------------------------------------------------------------------------
 
