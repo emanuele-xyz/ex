@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"vec",
+				"vec2"
+			],
+			[
 				"MaterialSet",
 				"MaterialSetI32"
 			],
@@ -22,10 +26,6 @@
 			[
 				"vert",
 				"vertTexCoord"
-			],
-			[
-				"vec",
-				"vec2"
 			],
 			[
 				"sizeof",
@@ -341,6 +341,22 @@
 		"selected_items":
 		[
 			[
+				"TODO",
+				"TODO.md"
+			],
+			[
+				"textures",
+				"data\\shaders\\textures.frag"
+			],
+			[
+				"textures.",
+				"data\\shaders\\textures.vert"
+			],
+			[
+				"main.c",
+				"src\\main.cpp"
+			],
+			[
 				"glad.h",
 				"vendor\\glad\\include\\glad\\glad.h"
 			],
@@ -381,10 +397,6 @@
 				"src\\main.cpp"
 			],
 			[
-				"TODO",
-				"TODO.md"
-			],
-			[
 				"shader.fra",
 				"data\\shaders\\shader.frag"
 			],
@@ -403,10 +415,6 @@
 			[
 				"flat.vert",
 				"data\\shaders\\flat.vert"
-			],
-			[
-				"main.c",
-				"src\\main.cpp"
 			],
 			[
 				"ex-build.",
