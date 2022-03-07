@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"MaterialSet",
+				"MaterialSetI32"
+			],
+			[
+				"TEXTURE_MAG_F",
+				"TEXTURE_MAG_FILTER_LINEAR"
+			],
+			[
+				"TEXTURE_W",
+				"TEXTURE_WRAP_CLAMP_TO_EDGE"
+			],
+			[
+				"c",
+				"channels"
+			],
+			[
+				"vert",
+				"vertTexCoord"
+			],
+			[
+				"vec",
+				"vec2"
+			],
+			[
+				"sizeof",
+				"sizeofVertices"
+			],
+			[
+				"inc",
+				"include"
+			],
+			[
 				"M",
 				"defaultMaterial"
 			],
@@ -24,20 +56,12 @@
 				"MeshDataInitQuad"
 			],
 			[
-				"sizeof",
-				"sizeofIndices"
-			],
-			[
 				"sizeo",
 				"sizeofVertices"
 			],
 			[
 				"in",
 				"indices"
-			],
-			[
-				"vert",
-				"vertices"
 			],
 			[
 				"Creat",
@@ -58,10 +82,6 @@
 			[
 				"Framebuffer",
 				"FramebufferSizeCallback"
-			],
-			[
-				"inc",
-				"inc"
 			]
 		]
 	},
@@ -113,16 +133,21 @@
 	},
 	"file_history":
 	[
+		"/C/Dev/ex/vendor/glad/include/glad/glad.h",
+		"/C/Dev/ex/cmd/ex-build.bat",
+		"/C/Dev/ex/vendor/stb_image/include/stb_image/stb_image.h",
+		"/C/Dev/ex/vendor/stb_image/src/stb_image.c",
+		"/C/Dev/ex/src/main.cpp",
+		"/C/Dev/ex/cmd/stb-image-build.bat",
+		"/C/Dev/ex/cmd/glfw-build.bat",
+		"/C/Dev/ex/vendor/stb_image/include/stb_image.h",
 		"/C/Users/emanuele/Downloads/cube.gltf",
 		"/C/Dev/ex/data/shaders/shader.frag",
 		"/C/Dev/ex/data/shaders/shader.vert",
 		"/C/Dev/ex/TODO.md",
-		"/C/Dev/ex/cmd/ex-build.bat",
 		"/C/Dev/ex/include/Ex/Core.h",
 		"/C/Dev/handmade-hero/code/build.txt",
-		"/C/Dev/ex/cmd/glfw-build.bat",
 		"/C/Dev/ex/cmd/glad-build.bat",
-		"/C/Dev/ex/vendor/glad/include/glad/glad.h",
 		"/C/Users/emanuele/AppData/Local/Temp/glad.h",
 		"/C/Dev/ex/ex.sublime-project",
 		"/C/Dev/ex/vendor/cglm/include/cglm/vec3.h",
@@ -182,6 +207,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"MaterialSetI32",
+			"glActiveTexture",
+			"MaterialSet3F32",
+			"Texture",
+			"stbi_load",
+			"implemente",
+			"warning",
+			"warnings",
 			"MaterialSet",
 			"CreateShaderProgram",
 			"_CRT_SECURE_NO_WARNINGS",
@@ -308,6 +341,46 @@
 		"selected_items":
 		[
 			[
+				"glad.h",
+				"vendor\\glad\\include\\glad\\glad.h"
+			],
+			[
+				"ex-build",
+				"cmd\\ex-build.bat"
+			],
+			[
+				"texture.",
+				"data\\shaders\\texture.frag"
+			],
+			[
+				"stbi_.",
+				"vendor\\stb_image\\include\\stb_image\\stb_image.h"
+			],
+			[
+				"main",
+				"src\\main.cpp"
+			],
+			[
+				"stb-ima",
+				"cmd\\stb-image-build.bat"
+			],
+			[
+				"glfw",
+				"cmd\\glfw-build.bat"
+			],
+			[
+				"stb_image.",
+				"vendor\\stb_image\\include\\stb_image\\stb_image.h"
+			],
+			[
+				"stb_ima",
+				"vendor\\stb_image\\include\\stb_image.h"
+			],
+			[
+				"mainc",
+				"src\\main.cpp"
+			],
+			[
 				"TODO",
 				"TODO.md"
 			],
@@ -372,14 +445,6 @@
 				"vendor\\glad\\include\\glad\\glad.h"
 			],
 			[
-				"ex-build",
-				"cmd\\ex-build.bat"
-			],
-			[
-				"main",
-				"src\\main.c"
-			],
-			[
 				"pro",
 				"ex.sublime-project"
 			],
@@ -438,10 +503,6 @@
 			[
 				"ma",
 				"src\\main.c"
-			],
-			[
-				"glfw",
-				"cmd\\glfw-build.bat"
 			],
 			[
 				"glad-build",
