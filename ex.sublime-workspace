@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"window",
+				"windowHeight"
+			],
+			[
 				"vert",
 				"vertPosition"
 			],
@@ -133,11 +137,17 @@
 	},
 	"file_history":
 	[
+		"/C/Dev/ex/src/main.cpp",
+		"/C/Dev/ex/vendor/cglm/include/cglm/struct/vec3.h",
+		"/C/Dev/ex/vendor/cglm/include/cglm/struct.h",
+		"/C/Dev/ex/vendor/cglm/README.md",
+		"/C/Dev/ex/vendor/cglm/include/cglm/vec4.h",
+		"/C/Dev/ex/vendor/cglm/include/cglm/cglm.h",
+		"/C/Dev/ex/vendor/cglm/include/cglm/vec3.h",
 		"/C/Dev/ex/vendor/cglm/include/cglm/mat4.h",
 		"/C/Dev/ex/.gitignore",
 		"/C/Dev/ex/data/shaders/textures.frag",
 		"/C/Dev/ex/data/shaders/textures.vert",
-		"/C/Dev/ex/src/main.cpp",
 		"/C/Dev/ex/TODO.md",
 		"/C/Dev/ex/vendor/glad/include/glad/glad.h",
 		"/C/Dev/ex/cmd/ex-build.bat",
@@ -154,8 +164,6 @@
 		"/C/Dev/ex/cmd/glad-build.bat",
 		"/C/Users/emanuele/AppData/Local/Temp/glad.h",
 		"/C/Dev/ex/ex.sublime-project",
-		"/C/Dev/ex/vendor/cglm/include/cglm/vec3.h",
-		"/C/Dev/ex/vendor/cglm/include/cglm/cglm.h",
 		"/C/Dev/ex/vendor/cglm/src/vec3.c",
 		"/C/Dev/ex/vendor/cglm/include/cglm/common.h",
 		"/C/Dev/ex/vendor/cglm/include/cglm/call/vec3.h",
@@ -210,6 +218,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"printf",
+			"ProcessInput",
+			"GLM_VEC3_IDENTITY",
+			"vec3",
+			"glms",
+			"glms_",
+			"struct Mesh",
+			"MaterialSetI32",
+			"ZERO",
+			"GLM_VEC3_ONE",
+			"GLM_ZUP",
+			"UP",
 			"GLM_MAT4_IDENTITY_INIT",
 			"GLM_MAT4_IDENTITY",
 			"MaterialSetI32",
@@ -318,13 +338,17 @@
 	},
 	"incremental_find":
 	{
-		"height": 31.2
+		"height": 34.4
 	},
 	"input":
 	{
 		"height": 0.0
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 364.0
+	},
 	"output.find_results":
 	{
 		"height": 126.400001526
@@ -332,7 +356,7 @@
 	"pinned_build_system": "BuildProject",
 	"replace":
 	{
-		"height": 59.2
+		"height": 65.6
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -341,6 +365,42 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"main",
+				"src\\main.cpp"
+			],
+			[
+				"mat4.h",
+				"vendor\\cglm\\include\\cglm\\mat4.h"
+			],
+			[
+				"vec3.h",
+				"vendor\\cglm\\include\\cglm\\vec3.h"
+			],
+			[
+				"struct/vec3.h",
+				"vendor\\cglm\\include\\cglm\\struct\\vec3.h"
+			],
+			[
+				"struct.h",
+				"vendor\\cglm\\include\\cglm\\struct.h"
+			],
+			[
+				"glm.",
+				"vendor\\cglm\\include\\cglm\\cglm.h"
+			],
+			[
+				"struct",
+				"vendor\\cglm\\include\\cglm\\struct.h"
+			],
+			[
+				"vec4",
+				"vendor\\cglm\\include\\cglm\\vec4.h"
+			],
+			[
+				"mvp",
+				"data\\shaders\\mvp.vert"
+			],
 			[
 				"mpv.fra",
 				"data\\shaders\\mvp.frag"
@@ -380,10 +440,6 @@
 			[
 				"stbi_.",
 				"vendor\\stb_image\\include\\stb_image\\stb_image.h"
-			],
-			[
-				"main",
-				"src\\main.cpp"
 			],
 			[
 				"stb-ima",
@@ -476,10 +532,6 @@
 			[
 				"kek",
 				"kek.txt"
-			],
-			[
-				"vec3.h",
-				"vendor\\cglm\\include\\cglm\\vec3.h"
 			],
 			[
 				"glm.h",
