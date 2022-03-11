@@ -7,3 +7,4 @@
 - When assertion fails, log error and then crash.
 - Cache shader program uniform indices
 - If a shader file changes, reload it (press a key or do it automatically)
+- less zoom -> faster movement / more zoom -> slower
