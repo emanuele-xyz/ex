@@ -32,13 +32,15 @@ typedef i64 b64;
 // Standard Library
 // ----------------------------------------------------------------------------
 
+#include <new>
+
 // ----------------------------------------------------------------------------
 // Macros
 // ----------------------------------------------------------------------------
 
 #define ExUnused(x) (void)(x)
 
-#define ExCrash() do { *(int*)(0) = 0; } while (false)
+#define ExCrash() do { __debugbreak(); } while (false)
 #define ExCrashMsg(msg) do { *(int*)(0) = 0; } while (false)
 
 #define ExAssert(p) do { if (!(p)) { ExCrash(); }  } while (false)
@@ -48,5 +50,32 @@ typedef i64 b64;
 #define ExUnreachableCodePath() ExCrashMsg("Unreachable code path")
 
 #define ExArraySize(a) (sizeof(a) / sizeof(*(a)))
+
+// ----------------------------------------------------------------------------
+// Templated Functions
+// ----------------------------------------------------------------------------
+
+template<typename T>
+T* ExAlloc(sz count)
+{
+    T* tmp = new (std::nothrow) T[count];
+    ExAssertMsg(tmp, "Memory allocation failed");
+    return tmp;
+}
+
+template<typename T>
+T* ExAlloc()
+{
+    T* tmp = new (std::nothrow) T;
+    ExAssertMsg(tmp, "Memory allocation failed");
+    return tmp;
+}
+
+template<typename T>
+void ExFree(T* p)
+{
+    ExAssertMsg(p, "Freeing a null pointer");
+    delete p;
+}
 
 // ----------------------------------------------------------------------------

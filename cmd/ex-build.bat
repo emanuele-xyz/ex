@@ -132,6 +132,8 @@ rem ignore bytes padding added warning
 set FLAGS= %FLAGS% /wd4820
 rem ignore structure was padded due to __declspec(align())
 set FLAGS= %FLAGS% /wd4324
+rem ignore 'noexcept' used with no exception handling mode specified
+set FLAGS= %FLAGS% /wd4577
 
 rem ///////////////////////////////////////////////////////////////////////////
 rem linker flags
