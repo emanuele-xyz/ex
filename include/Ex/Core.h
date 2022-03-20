@@ -18,21 +18,19 @@ typedef int16_t i16;
 typedef int32_t i32;
 typedef int64_t i64;
 
-typedef char c8;
-
-typedef float  f32;
-typedef double f64;
-
 typedef i8  b8;
 typedef i16 b16;
 typedef i32 b32;
 typedef i64 b64;
 
+typedef char c8;
+
+typedef float  f32;
+typedef double f64;
+
 // ----------------------------------------------------------------------------
 // Standard Library
 // ----------------------------------------------------------------------------
-
-#include <new>
 
 // ----------------------------------------------------------------------------
 // Macros
@@ -51,33 +49,5 @@ typedef i64 b64;
 #define ExUnreachableCodePath() ExAssert(false)
 
 #define ExArraySize(a) (sizeof(a) / sizeof(*(a)))
-
-// ----------------------------------------------------------------------------
-// Templated Functions
-// ----------------------------------------------------------------------------
-
-template<typename T>
-T* ExAlloc(sz count)
-{
-    T* tmp = new (std::nothrow) T[count];
-    ExAssertMsg(tmp, "Memory allocation failed");
-    return tmp;
-}
-
-template<typename T>
-T* ExAlloc()
-{
-    T* tmp = new (std::nothrow) T;
-
-    ExAssertMsg(tmp, "Memory allocation failed");
-    return tmp;
-}
-
-template<typename T>
-void ExFree(T* p)
-{
-    ExAssertMsg(p, "Freeing a null pointer");
-    delete p;
-}
 
 // ----------------------------------------------------------------------------

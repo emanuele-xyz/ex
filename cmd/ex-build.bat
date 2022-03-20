@@ -61,7 +61,7 @@ if "%1" == "debug"   (set FLAGS= %FLAGS% /DEX_DEBUG)
 if "%1" == "release" (set FLAGS= %FLAGS% /DEX_RELEASE)
 
 rem disbale standard library deprecation
-set FLAGS= %FLAGS% /D_CRT_SECURE_NO_WARNINGS
+rem set FLAGS= %FLAGS% /D_CRT_SECURE_NO_WARNINGS
 
 rem TODO: do i need them aligned or not?
 rem disable cglm alignment requirement

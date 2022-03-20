@@ -1,13 +1,13 @@
 #include "Ex/Engine/Modules/Game.h"
 
-void GameModule::Init()
+void GameModule::Init(EngineServices* s)
 {
-    // TODO: to be implemented
+    services = s;
 }
 
 void GameModule::Fini()
 {
-    // TODO: to be implemented
+    services = nullptr;
 }
 
 void GameModule::Update()

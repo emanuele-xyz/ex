@@ -3,6 +3,8 @@
 void SettingsModule::Load()
 {
     // TODO: load settings from default.json or custom.json file
+    appName = "Project Ex";
+
     windowWidth = 1280;
     windowHeight = 720;
 }

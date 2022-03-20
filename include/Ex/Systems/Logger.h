@@ -1,7 +1,7 @@
 #pragma once
 
-// #define ExLog(fmt, ...) ExLogInternal(__FUNCTION__ ":" __FILE__ "(" #__LINE__ "): " fmt, __VA_ARGS__)
+#include "Ex/Core.h"
 
-void ExLogInternal(char* fmt, ...);
+#define ExLog(fmt, ...) ExLogInternal(__FUNCTION__, __FILE__, __LINE__, fmt, __VA_ARGS__)
 
-#define ExLog(fmt, ...) ExLogInternal(fmt, __VA_ARGS__)
+void ExLogInternal(const char* function, const char* file, i32 line, char* fmt, ...);

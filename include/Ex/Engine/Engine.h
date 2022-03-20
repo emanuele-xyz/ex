@@ -1,26 +1,15 @@
 #pragma once
 
-#include "Ex/Engine/Modules/Settings.h"
-#include "Ex/Engine/Modules/Window.h"
-#include "Ex/Engine/Modules/Input.h"
-#include "Ex/Engine/Modules/Graphics.h"
+#include "Ex/Engine/Services.h"
 #include "Ex/Engine/Modules/Game.h"
-
-struct EngineServices
-{
-    SettingsModule* settings;
-    WindowModule*   window;
-    InputModule*    input;
-    GraphicsModule* graphics;
-};
 
 class Engine
 {
 private:
     SettingsModule settings;
     WindowModule   window;
-    InputModule    input;
     GraphicsModule graphics;
+    InputModule    input;
 
     EngineServices services;
 
