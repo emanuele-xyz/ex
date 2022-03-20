@@ -88,10 +88,10 @@ static void SetupOpenGLDebugCallback()
 
 static void GLFWFramebufferSizeCallback(GLFWwindow* /*window*/, int width, int height)
 {
-    // TODO: get these from glfw window custom user data
-    // windowWidth = width;
-    // windowHeight = height;
-    // windowAspect = (f32)(width) / (f32)(height);
+    WindowModule* window = glfwGetWindowUserPointer(window);
+    window.width = width;
+    window.height = height;
+    window.aspect = (f32)(width) / (f32)(height);
 
     glViewport(0, 0, width, height); // TODO: move this to the graphics module
 }

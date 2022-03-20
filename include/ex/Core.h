@@ -40,14 +40,15 @@ typedef i64 b64;
 
 #define ExUnused(x) (void)(x)
 
+// TODO: debugbreak if debug, just crash in release
 #define ExCrash() do { __debugbreak(); } while (false)
-#define ExCrashMsg(msg) do { *(int*)(0) = 0; } while (false)
 
+// TODO: should assertions work only in debug?
+// They are here to make sure we correctly use the API and to make sure
+// we don't violate function's contracts
 #define ExAssert(p) do { if (!(p)) { ExCrash(); }  } while (false)
-#define ExAssertMsg(p, msg) do { if (!(p)) { ExCrash(); }  } while (false)
-#define ExAssertFmt(p, fmt, ...) do { if (!(p)) { ExCrash(); }  } while (false)
 
-#define ExUnreachableCodePath() ExCrashMsg("Unreachable code path")
+#define ExUnreachableCodePath() ExAssert(false)
 
 #define ExArraySize(a) (sizeof(a) / sizeof(*(a)))
 
@@ -67,6 +68,7 @@ template<typename T>
 T* ExAlloc()
 {
     T* tmp = new (std::nothrow) T;
+
     ExAssertMsg(tmp, "Memory allocation failed");
     return tmp;
 }
