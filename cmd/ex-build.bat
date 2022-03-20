@@ -27,7 +27,14 @@ rem project source files
 rem ---------------------------------------------------------------------------
 
 set SOURCES=
-set SOURCES= %SOURCES% %SRC%\main.cpp
+set SOURCES= %SOURCES% %SRC%\Main.cpp
+set SOURCES= %SOURCES% %SRC%\Engine\Engine.cpp
+set SOURCES= %SOURCES% %SRC%\Engine\Modules\Graphics.cpp
+set SOURCES= %SOURCES% %SRC%\Engine\Modules\Input.cpp
+set SOURCES= %SOURCES% %SRC%\Engine\Modules\Settings.cpp
+set SOURCES= %SOURCES% %SRC%\Engine\Modules\Window.cpp
+set SOURCES= %SOURCES% %SRC%\Engine\Modules\Game.cpp
+set SOURCES= %SOURCES% %SRC%\Systems\Logger.cpp
 
 rem ///////////////////////////////////////////////////////////////////////////
 rem compiler flags
