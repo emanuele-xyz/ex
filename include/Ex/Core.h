@@ -39,7 +39,11 @@ typedef double f64;
 #define ExUnused(x) (void)(x)
 
 // TODO: debugbreak if debug, just crash in release
+#ifdef EX_DEBUG
 #define ExCrash() do { __debugbreak(); } while (false)
+#elif
+#define ExCrash() do { *(i32*)(0) = 0; } while (false);
+#endif
 
 // TODO: should assertions work only in debug?
 // They are here to make sure we correctly use the API and to make sure
