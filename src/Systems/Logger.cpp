@@ -15,7 +15,7 @@ void ExLogInternal(const char* function, const char* file, i32 line, char* fmt, 
     // Build format string
     {
         memset(format, 0, FORMAT_SIZE);
-        snprintf(format, FORMAT_SIZE, "%s - %s(%d): %s", function, file, line, fmt);
+        snprintf(format, FORMAT_SIZE, "%s(%d) - %s - %s", file, line, function, fmt);
     }
 
     // Build message string

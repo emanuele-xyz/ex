@@ -24,6 +24,8 @@ static void GLFWFramebufferSizeCallback(GLFWwindow* handle, int width, int heigh
     window->resizeCallbackFn(width, height);
 }
 
+// TODO: A module cannot reference another module!
+// Pass arguments explicitly
 void WindowModule::Init(SettingsModule* settings)
 {
     handle = nullptr;

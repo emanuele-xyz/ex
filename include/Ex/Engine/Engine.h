@@ -15,6 +15,9 @@ private:
 
     GameModule     game;
 
+    bool isRunning;
+    bool isPaused;
+
 public:
     void Init();
     void Fini();

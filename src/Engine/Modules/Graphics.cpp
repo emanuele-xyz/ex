@@ -101,6 +101,8 @@ void GraphicsModule::Init(WindowModule* window)
     SetupOpenGLDebugCallback();
     #endif
 
+    // TODO: a module cannot reference other modules
+    // TODO: this is an event and should be handled as such
     window->resizeCallbackFn = WindowResizeCallback;
 }
 

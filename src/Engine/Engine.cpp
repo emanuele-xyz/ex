@@ -15,6 +15,9 @@ void Engine::Init()
     services.input    = &input;
 
     game.Init(&services);
+
+    isRunning = true;
+    isPaused = false;
 }
 
 void Engine::Fini()
@@ -22,9 +25,9 @@ void Engine::Fini()
     game.Fini();
 
     services.settings = nullptr;
-    services.window = nullptr;
+    services.window   = nullptr;
     services.graphics = nullptr;
-    services.input = nullptr;
+    services.input    = nullptr;
 
     input.Fini();
     graphics.Fini();
@@ -34,5 +37,18 @@ void Engine::Fini()
 
 void Engine::Run()
 {
-    ExLog("Running ...");
+    isRunning = window.ShouldClose(); // TODO: it doesn't make any sense for the engine state to be set by the window module
+    isPaused = false; // TODO: check how to update this
+
+    while (isRunning)
+    {
+        if (isPaused)
+        {
+            // NOTE: do nothing
+        }
+        else
+        {
+
+        }
+    }
 }
