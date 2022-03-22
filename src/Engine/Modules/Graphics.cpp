@@ -77,15 +77,10 @@ static void SetupOpenGLDebugCallback()
     glDebugMessageControl(GL_DONT_CARE, GL_DONT_CARE, GL_DONT_CARE, 0, NULL, GL_TRUE);
 }
 
-static void WindowResizeCallback(i32 width, i32 height)
-{
-    glViewport(0, 0, width, height);
-}
-
 void GraphicsModule::Init(WindowModule* window)
 {
     // Make the window's OpenGL context current on the calling thread
-    glfwMakeContextCurrent((GLFWwindow*)(window->handle));
+    glfwMakeContextCurrent((GLFWwindow*)(window->GetHandle()));
 
     #pragma warning (push)
     #pragma warning (disable : 4191)
@@ -100,13 +95,14 @@ void GraphicsModule::Init(WindowModule* window)
     CheckForOpeGLDebugContext();
     SetupOpenGLDebugCallback();
     #endif
-
-    // TODO: a module cannot reference other modules
-    // TODO: this is an event and should be handled as such
-    window->resizeCallbackFn = WindowResizeCallback;
 }
 
 void GraphicsModule::Fini()
 {
     // TODO: to be implemented
+}
+
+void GraphicsModule::OnFramebufferResize(i32 width, i32 height)
+{
+    glViewport(0, 0, width, height);
 }

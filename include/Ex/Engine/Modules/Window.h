@@ -1,21 +1,28 @@
 #pragma once
 
 #include "Ex/Core.h"
-#include "Ex/Engine/Modules/Settings.h"
-
-typedef void (WindowModuleResizeCallbackFn)(i32 width, i32 height);
+#include "Ex/Engine/Modules/WindowEventsListener.h"
 
 class WindowModule
 {
-public:
+private:
     void* handle;
-    i32   width;
-    i32   height;
-    f32   aspect;
 
-    WindowModuleResizeCallbackFn* resizeCallbackFn;
+    u32 listenersCount;
+    WindowModuleEventsListener** listeners;
 
 public:
-    void Init(SettingsModule* settings);
+    void Init(i32 width, i32 height, char* title);
     void Fini();
+
+    void* GetHandle();
+
+private:
+    void EmitFramebufferResizeEvent(i32 width, i32 height);
+    void EmitCloseRequestEvent();
+
+private:
+    static void GLFWErrorCallback(int error, const char* description);
+    static void GLFWFramebufferSizeCallback(void* handle, int width, int height);
+    static void GLFWCloseCallback(void* handle);
 };

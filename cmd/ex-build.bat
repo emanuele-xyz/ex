@@ -29,11 +29,16 @@ rem ---------------------------------------------------------------------------
 set SOURCES=
 set SOURCES= %SOURCES% %SRC%\Main.cpp
 set SOURCES= %SOURCES% %SRC%\Engine\Engine.cpp
-set SOURCES= %SOURCES% %SRC%\Engine\Modules\Graphics.cpp
-set SOURCES= %SOURCES% %SRC%\Engine\Modules\Input.cpp
-set SOURCES= %SOURCES% %SRC%\Engine\Modules\Settings.cpp
-set SOURCES= %SOURCES% %SRC%\Engine\Modules\Window.cpp
 set SOURCES= %SOURCES% %SRC%\Engine\Modules\Game.cpp
+set SOURCES= %SOURCES% %SRC%\Engine\Modules\GameEventsListener.cpp
+set SOURCES= %SOURCES% %SRC%\Engine\Modules\Graphics.cpp
+set SOURCES= %SOURCES% %SRC%\Engine\Modules\GraphicsEventsListener.cpp
+set SOURCES= %SOURCES% %SRC%\Engine\Modules\Input.cpp
+set SOURCES= %SOURCES% %SRC%\Engine\Modules\InputEventsListener.cpp
+set SOURCES= %SOURCES% %SRC%\Engine\Modules\Settings.cpp
+set SOURCES= %SOURCES% %SRC%\Engine\Modules\SettingsEventsListener.cpp
+set SOURCES= %SOURCES% %SRC%\Engine\Modules\Window.cpp
+set SOURCES= %SOURCES% %SRC%\Engine\Modules\WindowEventsListener.cpp
 set SOURCES= %SOURCES% %SRC%\Systems\Logger.cpp
 
 rem ///////////////////////////////////////////////////////////////////////////
@@ -141,6 +146,8 @@ rem ignore structure was padded due to __declspec(align())
 set FLAGS= %FLAGS% /wd4324
 rem ignore 'noexcept' used with no exception handling mode specified
 set FLAGS= %FLAGS% /wd4577
+rem class has virtual functions, but its trivial destructor is not virtual
+set FLAGS= %FLAGS% /wd5204
 
 rem ///////////////////////////////////////////////////////////////////////////
 rem linker flags

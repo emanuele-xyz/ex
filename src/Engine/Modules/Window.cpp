@@ -1,38 +1,15 @@
 #include "Ex/Engine/Modules/Window.h"
 
 #include "Ex/Systems/Logger.h"
+#include "Ex/Systems/Memory.h"
 
 #pragma warning (push, 0)
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #pragma warning (pop)
 
-static void GLFWErrorCallback(int error, const char* description)
+void WindowModule::Init(i32 width, i32 height, char* title)
 {
-    ExLog("GLFWDEBUG(%d): %s\n", error, description);
-    ExCrash(); // TODO: in release crash but in debug start debugging with debugbreak
-}
-
-static void GLFWFramebufferSizeCallback(GLFWwindow* handle, int width, int height)
-{
-    WindowModule* window = (WindowModule*)(glfwGetWindowUserPointer(handle));
-    window->width = width;
-    window->height = height;
-    window->aspect = (f32)(width) / (f32)(height);
-
-    ExAssert(window->resizeCallbackFn);
-    window->resizeCallbackFn(width, height);
-}
-
-// TODO: A module cannot reference another module!
-// Pass arguments explicitly
-void WindowModule::Init(SettingsModule* settings)
-{
-    handle = nullptr;
-    width = settings->windowWidth;
-    height = settings->windowHeight;
-    resizeCallbackFn = nullptr;
-
     #ifdef EX_DEBUG
     glfwSetErrorCallback(GLFWErrorCallback);
     #endif
@@ -48,13 +25,17 @@ void WindowModule::Init(SettingsModule* settings)
     glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, true);
     #endif
 
-    handle = glfwCreateWindow(width, height, settings->appName, NULL, NULL);
+    handle = glfwCreateWindow(width, height, title, NULL, NULL);
     if (!handle) ExLog("Failed to crete GLFW window");
     ExAssert(handle);
 
     glfwSetWindowUserPointer((GLFWwindow*)(handle), this);
 
-    glfwSetFramebufferSizeCallback((GLFWwindow*)(handle), GLFWFramebufferSizeCallback);
+    glfwSetFramebufferSizeCallback((GLFWwindow*)(handle), (GLFWframebuffersizefun)(GLFWFramebufferSizeCallback));
+
+    // TODO: use a Vec
+    listenersCount = 16;
+    listeners = ExAlloc<WindowModuleEventsListener*>(listenersCount);
 }
 
 void WindowModule::Fini()
@@ -62,3 +43,49 @@ void WindowModule::Fini()
     glfwDestroyWindow((GLFWwindow*)(handle));
     glfwTerminate();
 }
+
+void* WindowModule::GetHandle()
+{
+    return handle;
+}
+
+void WindowModule::EmitFramebufferResizeEvent(i32 width, i32 height)
+{
+    for (u32 i = 0; i < listenersCount; i++)
+    {
+        if (listeners[i] != nullptr)
+        {
+            listeners[i]->OnFramebufferResize(width, height);
+        }
+    }
+}
+
+void WindowModule::EmitCloseRequestEvent()
+{
+    for (u32 i = 0; i < listenersCount; i++)
+    {
+        if (listeners[i] != nullptr)
+        {
+            listeners[i]->OnCloseRequest();
+        }
+    }
+}
+
+void WindowModule::GLFWErrorCallback(int error, const char* description)
+{
+    ExLog("GLFWDEBUG(%d): %s\n", error, description);
+    ExCrash();
+}
+
+void WindowModule::GLFWFramebufferSizeCallback(void* handle, int width, int height)
+{
+    WindowModule* window = (WindowModule*)(glfwGetWindowUserPointer((GLFWwindow*)(handle)));
+    window->EmitFramebufferResizeEvent(width, height);
+}
+
+void WindowModule::GLFWCloseCallback(void* handle)
+{
+    WindowModule* window = (WindowModule*)(glfwGetWindowUserPointer((GLFWwindow*)(handle)));
+    window->EmitCloseRequestEvent();
+}
+
