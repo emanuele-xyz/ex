@@ -6,13 +6,22 @@
 #include "Ex/Systems/Logger.h"
 
 template<typename T>
-T* ExAlloc(sz count)
+T* ExArrayAlloc(sz count)
 {
     T* tmp = new (std::nothrow) T[count];
     if (!tmp) ExLog("Memory allocation failed");
     ExAssert(tmp);
 
     return tmp;
+}
+
+template<typename T>
+void ExArrayFree(T* p)
+{
+    if (!p) ExLog("Freeing a null pointer");
+    ExAssert(p);
+
+    delete[] p;
 }
 
 template<typename T>

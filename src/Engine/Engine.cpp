@@ -4,17 +4,16 @@
 
 void Engine::Init()
 {
+    // NOTE: initialize modules
     settings.Load();
     window.Init(settings.windowWidth, settings.windowHeight, settings.appName);
     graphics.Init(&window);
     input.Init();
+    game.Init();
 
-    services.settings = &settings;
-    services.window   = &window;
-    services.graphics = &graphics;
-    services.input    = &input;
-
-    game.Init(&services);
+    // NOTE: wire up modules
+    window.AddListener(&graphics);
+    window.AddListener(&game);
 
     isRunning = true;
     isPaused = false;
@@ -23,12 +22,6 @@ void Engine::Init()
 void Engine::Fini()
 {
     game.Fini();
-
-    services.settings = nullptr;
-    services.window   = nullptr;
-    services.graphics = nullptr;
-    services.input    = nullptr;
-
     input.Fini();
     graphics.Fini();
     window.Fini();

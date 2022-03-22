@@ -1,13 +1,22 @@
 #include "Ex/Engine/Modules/Game.h"
 
-void GameModule::Init(EngineServices* s)
+#include "Ex/Systems/Memory.h"
+
+void GameModule::Init()
 {
-    services = s;
+    // TODO: to be implemented
+
+    // TODO: use a Vec
+    listenersCount = 16;
+    listeners = ExArrayAlloc<GameModuleEventsListener*>(listenersCount);
 }
 
 void GameModule::Fini()
 {
-    services = nullptr;
+    ExFree(listeners);
+    listenersCount = 0;
+
+    // TODO: to be implemented
 }
 
 void GameModule::Update()
@@ -18,4 +27,20 @@ void GameModule::Update()
 void GameModule::Render()
 {
     // TODO: to be implemented
+}
+
+void GameModule::EmitQuitEvent()
+{
+    for (u32 i = 0; i < listenersCount; i++)
+    {
+        if (listeners[i] != nullptr)
+        {
+            listeners[i]->OnQuit();
+        }
+    }
+}
+
+void GameModule::OnCloseRequest()
+{
+    EmitQuitEvent();
 }

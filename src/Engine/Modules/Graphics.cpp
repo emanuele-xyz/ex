@@ -77,10 +77,10 @@ static void SetupOpenGLDebugCallback()
     glDebugMessageControl(GL_DONT_CARE, GL_DONT_CARE, GL_DONT_CARE, 0, NULL, GL_TRUE);
 }
 
-void GraphicsModule::Init(WindowModule* window)
+void GraphicsModule::Init(void* windowHandle)
 {
     // Make the window's OpenGL context current on the calling thread
-    glfwMakeContextCurrent((GLFWwindow*)(window->GetHandle()));
+    glfwMakeContextCurrent((GLFWwindow*)(windowHandle));
 
     #pragma warning (push)
     #pragma warning (disable : 4191)

@@ -17,6 +17,10 @@ public:
 
     void* GetHandle();
 
+    void AddListener(WindowModuleEventsListener* listener);
+    // TODO: should we add a remove listener function?
+    // void RemoveListener(WindowModuleEventsListener* listener);
+
 private:
     void EmitFramebufferResizeEvent(i32 width, i32 height);
     void EmitCloseRequestEvent();

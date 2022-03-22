@@ -35,11 +35,14 @@ void WindowModule::Init(i32 width, i32 height, char* title)
 
     // TODO: use a Vec
     listenersCount = 16;
-    listeners = ExAlloc<WindowModuleEventsListener*>(listenersCount);
+    listeners = ExArrayAlloc<WindowModuleEventsListener*>(listenersCount);
 }
 
 void WindowModule::Fini()
 {
+    ExFree(listeners);
+    listenersCount = 0;
+
     glfwDestroyWindow((GLFWwindow*)(handle));
     glfwTerminate();
 }
@@ -47,6 +50,17 @@ void WindowModule::Fini()
 void* WindowModule::GetHandle()
 {
     return handle;
+}
+
+void WindowModule::AddListener(WindowModuleEventsListener* listener)
+{
+    for (u32 i = 0; i < listenersCount; i++)
+    {
+        if (listeners[i] == nullptr)
+        {
+            listeners[i] = listener;
+        }
+    }
 }
 
 void WindowModule::EmitFramebufferResizeEvent(i32 width, i32 height)

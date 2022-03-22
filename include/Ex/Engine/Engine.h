@@ -1,6 +1,9 @@
 #pragma once
 
-#include "Ex/Engine/Services.h"
+#include "Ex/Engine/Modules/Settings.h"
+#include "Ex/Engine/Modules/Window.h"
+#include "Ex/Engine/Modules/Graphics.h"
+#include "Ex/Engine/Modules/Input.h"
 #include "Ex/Engine/Modules/Game.h"
 
 class Engine
@@ -10,9 +13,6 @@ private:
     WindowModule   window;
     GraphicsModule graphics;
     InputModule    input;
-
-    EngineServices services;
-
     GameModule     game;
 
     bool isRunning;

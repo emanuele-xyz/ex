@@ -1,15 +1,24 @@
 #pragma once
 
-#include "Ex/Engine/Services.h"
+#include "Ex/Core.h"
+#include "Ex/Engine/Modules/WindowEventsListener.h"
+#include "Ex/Engine/Modules/GameEventsListener.h"
 
-class GameModule
+class GameModule : public WindowModuleEventsListener
 {
 private:
-    EngineServices* services;
-
+    u32 listenersCount;
+    GameModuleEventsListener** listeners;
 public:
-    void Init(EngineServices* s);
+    // Main Methods ------------------------------------------------------------
+    void Init();
     void Fini();
     void Update();
     void Render();
+
+    // Events Emitter ----------------------------------------------------------
+    void EmitQuitEvent();
+
+    // Events Listener ---------------------------------------------------------
+    void OnCloseRequest();
 };
