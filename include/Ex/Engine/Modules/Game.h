@@ -9,14 +9,16 @@ class GameModule : public WindowModuleEventsListener
 private:
     u32 listenersCount;
     GameModuleEventsListener** listeners;
+
+
+
 public:
     // Main Methods ------------------------------------------------------------
     void Init();
     void Fini();
-    void Update();
-    void Render();
 
     // Events Emitter ----------------------------------------------------------
+    void AddListener(GameModuleEventsListener* listener);
     void EmitQuitEvent();
 
     // Events Listener ---------------------------------------------------------

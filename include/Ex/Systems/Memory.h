@@ -8,7 +8,7 @@
 template<typename T>
 T* ExArrayAlloc(sz count)
 {
-    T* tmp = new (std::nothrow) T[count];
+    T* tmp = new (std::nothrow) T[count]();
     if (!tmp) ExLog("Memory allocation failed");
     ExAssert(tmp);
 
@@ -27,7 +27,7 @@ void ExArrayFree(T* p)
 template<typename T>
 T* ExAlloc()
 {
-    T* tmp = new (std::nothrow) T;
+    T* tmp = new (std::nothrow) T();
     if (!tmp) ExLog("Memory allocation failed");
     ExAssert(tmp);
 

@@ -1,11 +1,22 @@
 #include "Ex/Engine/Modules/EngineState.h"
 
-bool EngineState::IsRunning()
+void EngineStateModule::Setup()
+{
+    isRunning = true;
+    isPaused = false;
+}
+
+bool EngineStateModule::IsRunning()
 {
     return isRunning;
 }
 
-bool EngineState::IsPaused()
+bool EngineStateModule::IsPaused()
 {
     return isPaused;
+}
+
+void EngineStateModule::OnQuit()
+{
+    isRunning = false;
 }

@@ -5,9 +5,10 @@
 void Engine::Init()
 {
     // NOTE: initialize modules
+    engineState.Setup();
     settings.Load();
     window.Init(settings.windowWidth, settings.windowHeight, settings.appName);
-    graphics.Init(&window);
+    graphics.Init(window.GetHandle());
     input.Init();
     game.Init();
 
@@ -15,8 +16,7 @@ void Engine::Init()
     window.AddListener(&graphics);
     window.AddListener(&game);
 
-    isRunning = true;
-    isPaused = false;
+    game.AddListener(&engineState);
 }
 
 void Engine::Fini()
@@ -30,18 +30,17 @@ void Engine::Fini()
 
 void Engine::Run()
 {
-//    isRunning = window.ShouldClose(); // TODO: it doesn't make any sense for the engine state to be set by the window module
-//    isPaused = false; // TODO: check how to update this
-//
-//    while (isRunning)
-//    {
-//        if (isPaused)
-//        {
-//            // NOTE: do nothing
-//        }
-//        else
-//        {
-//
-//        }
-//    }
+    while (engineState.IsRunning())
+    {
+        window.PollEvents();
+
+        if (engineState.IsPaused())
+        {
+            // NOTE: do nothing
+        }
+        else
+        {
+            game.Tick();
+        }
+    }
 }

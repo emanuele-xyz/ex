@@ -32,6 +32,7 @@ void WindowModule::Init(i32 width, i32 height, char* title)
     glfwSetWindowUserPointer((GLFWwindow*)(handle), this);
 
     glfwSetFramebufferSizeCallback((GLFWwindow*)(handle), (GLFWframebuffersizefun)(GLFWFramebufferSizeCallback));
+    glfwSetWindowCloseCallback((GLFWwindow*)(handle), (GLFWwindowclosefun)(GLFWCloseCallback));
 
     // TODO: use a Vec
     listenersCount = 16;
@@ -47,6 +48,11 @@ void WindowModule::Fini()
     glfwTerminate();
 }
 
+void WindowModule::PollEvents()
+{
+    glfwPollEvents();
+}
+
 void* WindowModule::GetHandle()
 {
     return handle;
@@ -54,13 +60,13 @@ void* WindowModule::GetHandle()
 
 void WindowModule::AddListener(WindowModuleEventsListener* listener)
 {
-    for (u32 i = 0; i < listenersCount; i++)
-    {
-        if (listeners[i] == nullptr)
-        {
-            listeners[i] = listener;
-        }
-    }
+    // TODO: to be reworked when using Vec
+
+    u32 i = 0;
+    while (i < listenersCount && listeners[i] != nullptr) i++;
+    ExAssert(i != listenersCount);
+
+    listeners[i] = listener;
 }
 
 void WindowModule::EmitFramebufferResizeEvent(i32 width, i32 height)

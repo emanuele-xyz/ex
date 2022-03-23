@@ -39,6 +39,7 @@ set SOURCES= %SOURCES% %SRC%\Engine\Modules\Settings.cpp
 set SOURCES= %SOURCES% %SRC%\Engine\Modules\SettingsEventsListener.cpp
 set SOURCES= %SOURCES% %SRC%\Engine\Modules\Window.cpp
 set SOURCES= %SOURCES% %SRC%\Engine\Modules\WindowEventsListener.cpp
+set SOURCES= %SOURCES% %SRC%\Engine\Modules\EngineState.cpp
 set SOURCES= %SOURCES% %SRC%\Systems\Logger.cpp
 
 rem ///////////////////////////////////////////////////////////////////////////

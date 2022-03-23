@@ -15,6 +15,8 @@ public:
     void Init(i32 width, i32 height, char* title);
     void Fini();
 
+    void PollEvents();
+
     void* GetHandle();
 
     void AddListener(WindowModuleEventsListener* listener);

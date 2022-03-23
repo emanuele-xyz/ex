@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Ex/Engine/Modules/EngineState.h"
 #include "Ex/Engine/Modules/Settings.h"
 #include "Ex/Engine/Modules/Window.h"
 #include "Ex/Engine/Modules/Graphics.h"
@@ -9,14 +10,12 @@
 class Engine
 {
 private:
-    SettingsModule settings;
-    WindowModule   window;
-    GraphicsModule graphics;
-    InputModule    input;
-    GameModule     game;
-
-    bool isRunning;
-    bool isPaused;
+    EngineStateModule engineState;
+    SettingsModule    settings;
+    WindowModule      window;
+    GraphicsModule    graphics;
+    InputModule       input;
+    GameModule        game;
 
 public:
     void Init();

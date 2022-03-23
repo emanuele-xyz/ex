@@ -1,11 +1,60 @@
 #include "Ex/Engine/Modules/Game.h"
 
 #include "Ex/Systems/Memory.h"
+#include "Ex/Systems/Logger.h"
+
+// -----------------------------------------------------------------------------
+// TODO: move these in their own files
+// -----------------------------------------------------------------------------
+
+#pragma warning (push, 0)
+#include <cglm/cglm.h>
+#pragma warning (pop)
+
+typedef u32 Mesh;
+typedef u32 Material;
+
+class TransformComponent
+{
+    vec3 position;
+    vec3 rotation;
+};
+
+class MeshComponent
+{
+    Mesh mesh;
+}
+
+class MaterialComponent
+{
+    Material material;
+}
+
+class LocalSystem
+{
+
+};
+
+class Entity
+{
+public:
+    virtual void Update() {};
+};
+
+class Player : public Entity
+{
+    TransformComponent transform;
+}
+
+class GlobalSystem
+{
+
+};
+
+// -----------------------------------------------------------------------------
 
 void GameModule::Init()
 {
-    // TODO: to be implemented
-
     // TODO: use a Vec
     listenersCount = 16;
     listeners = ExArrayAlloc<GameModuleEventsListener*>(listenersCount);
@@ -15,18 +64,22 @@ void GameModule::Fini()
 {
     ExFree(listeners);
     listenersCount = 0;
-
-    // TODO: to be implemented
 }
 
-void GameModule::Update()
+void GameModule::Tick()
 {
-    // TODO: to be implemented
+
 }
 
-void GameModule::Render()
+void GameModule::AddListener(GameModuleEventsListener* listener)
 {
-    // TODO: to be implemented
+    // TODO: to be reworked when using Vec
+
+    u32 i = 0;
+    while (i < listenersCount && listeners[i] != nullptr) i++;
+    ExAssert(i != listenersCount);
+
+    listeners[i] = listener;
 }
 
 void GameModule::EmitQuitEvent()
