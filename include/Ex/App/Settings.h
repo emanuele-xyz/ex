@@ -2,7 +2,7 @@
 
 #include "Ex/Core.h"
 
-class SettingsModule
+class Settings
 {
 public:
     i32 windowWidth;

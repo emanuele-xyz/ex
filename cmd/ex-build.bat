@@ -28,18 +28,13 @@ rem ---------------------------------------------------------------------------
 
 set SOURCES=
 set SOURCES= %SOURCES% %SRC%\Main.cpp
-set SOURCES= %SOURCES% %SRC%\Engine\Engine.cpp
-set SOURCES= %SOURCES% %SRC%\Engine\Modules\Game.cpp
-set SOURCES= %SOURCES% %SRC%\Engine\Modules\GameEventsListener.cpp
-set SOURCES= %SOURCES% %SRC%\Engine\Modules\Graphics.cpp
-set SOURCES= %SOURCES% %SRC%\Engine\Modules\GraphicsEventsListener.cpp
-set SOURCES= %SOURCES% %SRC%\Engine\Modules\Input.cpp
-set SOURCES= %SOURCES% %SRC%\Engine\Modules\InputEventsListener.cpp
-set SOURCES= %SOURCES% %SRC%\Engine\Modules\Settings.cpp
-set SOURCES= %SOURCES% %SRC%\Engine\Modules\SettingsEventsListener.cpp
-set SOURCES= %SOURCES% %SRC%\Engine\Modules\Window.cpp
-set SOURCES= %SOURCES% %SRC%\Engine\Modules\WindowEventsListener.cpp
-set SOURCES= %SOURCES% %SRC%\Engine\Modules\EngineState.cpp
+set SOURCES= %SOURCES% %SRC%\App\App.cpp
+set SOURCES= %SOURCES% %SRC%\App\Input.cpp
+set SOURCES= %SOURCES% %SRC%\App\Settings.cpp
+set SOURCES= %SOURCES% %SRC%\App\State.cpp
+set SOURCES= %SOURCES% %SRC%\App\Window.cpp
+set SOURCES= %SOURCES% %SRC%\Game\Game.cpp
+set SOURCES= %SOURCES% %SRC%\Game\Graphics.cpp
 set SOURCES= %SOURCES% %SRC%\Systems\Logger.cpp
 
 rem ///////////////////////////////////////////////////////////////////////////

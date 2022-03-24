@@ -1,4 +1,4 @@
-#include "Ex\Engine\Modules\Graphics.h"
+#include "Ex\Game\Graphics.h"
 
 #pragma warning (push, 0)
 #include <glad/glad.h>
@@ -77,7 +77,7 @@ static void SetupOpenGLDebugCallback()
     glDebugMessageControl(GL_DONT_CARE, GL_DONT_CARE, GL_DONT_CARE, 0, NULL, GL_TRUE);
 }
 
-void GraphicsModule::Init(void* windowHandle)
+void Graphics::Init(void* windowHandle)
 {
     // Make the window's OpenGL context current on the calling thread
     glfwMakeContextCurrent((GLFWwindow*)(windowHandle));
@@ -97,12 +97,18 @@ void GraphicsModule::Init(void* windowHandle)
     #endif
 }
 
-void GraphicsModule::Fini()
+void Graphics::Fini()
 {
     // TODO: to be implemented
 }
 
-void GraphicsModule::OnFramebufferResize(i32 width, i32 height)
+void Graphics::ClearColorBuffer(f32 r, f32 g, f32 b, f32 a)
+{
+    glClearColor(r, g, b, a);
+    glClear(GL_COLOR_BUFFER_BIT);
+}
+
+void Graphics::ResizeFramebuffer(i32 width, i32 height)
 {
     glViewport(0, 0, width, height);
 }

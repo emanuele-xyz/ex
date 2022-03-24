@@ -1,6 +1,6 @@
-#include "Ex/Engine/Modules/Settings.h"
+#include "Ex/App/Settings.h"
 
-void SettingsModule::Load()
+void Settings::Load()
 {
     // TODO: load settings from default.json or custom.json file
     appName = "Project Ex";
@@ -9,7 +9,7 @@ void SettingsModule::Load()
     windowHeight = 720;
 }
 
-void SettingsModule::Save()
+void Settings::Save()
 {
     // TODO: write current settings to custom.json
 }
