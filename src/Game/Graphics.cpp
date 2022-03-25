@@ -3,6 +3,7 @@
 #pragma warning (push, 0)
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <cgltf/cgltf.h>
 #pragma warning (pop)
 
 #include "Ex/Systems/Logger.h"
@@ -98,6 +99,27 @@ void Graphics::Init(void* windowHandle)
 }
 
 void Graphics::Fini()
+{
+    glfwMakeContextCurrent(nullptr);
+}
+
+Mesh Graphics::LoadMesh(const char* path)
+{
+    // TODO: to be implemented
+
+    cgltf_options options = {};
+    cgltf_data* data = nullptr;
+    cgltf_result result = cgltf_parse_file(&options, path, &data);
+    ExAssert(result == cgltf_result_success);
+
+
+
+    cgltf_free(data);
+
+    return { 0 };
+}
+
+void Graphics::UnloadMesh(Mesh /*mesh*/)
 {
     // TODO: to be implemented
 }

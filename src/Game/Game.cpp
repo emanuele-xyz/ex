@@ -3,64 +3,22 @@
 #include "Ex/Systems/Memory.h"
 #include "Ex/Systems/Logger.h"
 
-// -----------------------------------------------------------------------------
-// TODO: move these in their own files
-// -----------------------------------------------------------------------------
-
-#pragma warning (push, 0)
-#include <cglm/cglm.h>
-#pragma warning (pop)
-
-typedef u32 Mesh;
-typedef u32 Material;
-
-class TransformComponent
-{
-    vec3 position;
-    vec3 rotation;
-};
-
-class MeshComponent
-{
-    Mesh mesh;
-};
-
-class MaterialComponent
-{
-    Material material;
-};
-
-class LocalSystem
-{
-
-};
-
-class Entity
-{
-public:
-    virtual void Update() {};
-};
-
-class Player : public Entity
-{
-    TransformComponent transform;
-};
-
-class GlobalSystem
-{
-
-};
-
-// -----------------------------------------------------------------------------
-
 void Game::Init(void* windowHandle)
 {
     graphics.Init(windowHandle);
     hasFinished = false;
+
+    // -------------------------------------------------------------------------
+
+
 }
 
 void Game::Fini()
 {
+
+
+    // -------------------------------------------------------------------------
+
     hasFinished = true;
     graphics.Fini();
 }
